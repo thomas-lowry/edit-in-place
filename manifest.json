@@ -1,0 +1,7 @@
+{
+  "name": "Edit in place",
+  "id": "754704266165393093",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}
