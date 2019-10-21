@@ -1,22 +1,8 @@
-This plugin template uses Typescript. If you are familiar with Javascript, Typescript will
-look very familiar. In fact, valid Javascript code is already valid Typescript code.
+This is a utility plugin for Figma that lets you edit a master component in context. This only works for local components. This is great for when you have your master components organized on a different page, but can benefit from being able to make changes to it, in context. How it works:
 
-Typescript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
+1. Select an instance of the component you want to edit.
+2. Run the plugin (cmd + / and then type 'Edit in place')
+3. The instance will get hidden, and the master component added to your mockup
+4. Click done when finished editing, and the instance will be unhidden and master component returned to its previous location
 
-For more information, visit https://www.typescriptlang.org/
-
-Using Typescript requires a compiler to convert Typescript (code.ts) into Javascript (code.js)
-for the browser to run.
-
-To get the TypeScript compiler working:
-
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Install the TypeScript compiler globally: `sudo npm install -g typescript`.
-3. Open this directory in Visual Studio Code.
-4. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "tsc: watch - tsconfig.json". You will have to do this again every time
-    you reopen Visual Studio Code.
-
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+*IF YOU DO NOT CLICK 'DONE': the master component will be not be moved back to its previous location in the document*
