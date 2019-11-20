@@ -15,13 +15,14 @@ if (validateSelection()) {
 figma.ui.onmessage = function (msg) {
 
 	if(msg.done === true) {
-		moveMasterBack();
-		figma.closePlugin;
-		return;
+		figma.closePlugin();
 	}
-
 }
 
+
+figma.on("close", () => {
+	moveMasterBack();
+})
 
 
 // FUNCTIONS //////////
@@ -145,7 +146,7 @@ function getMCLocation(node) {
 
 //override size of instances to be the same size.
 function overrideSizeOfInstances(mcID) {
-	let instances = figma.root.findAll(i => i.type === 'INSTANCE' && i.masterComponent.id === mcID);
+	let instances = figma.root.findAll(i => i.type === 'INSTANCE' && i.masterComponent.id === mcID) as InstanceNode[];
 	instances.forEach(instance => {		
 		let width = instance.width;
 		let height = instance.height;

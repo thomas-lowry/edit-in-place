@@ -13,11 +13,12 @@ else {
 //msgs from UI
 figma.ui.onmessage = function (msg) {
     if (msg.done === true) {
-        moveMasterBack();
-        figma.closePlugin;
-        return;
+        figma.closePlugin();
     }
 };
+figma.on("close", () => {
+    moveMasterBack();
+});
 // FUNCTIONS //////////
 //initialize plugin
 function editMasterInPlace() {
